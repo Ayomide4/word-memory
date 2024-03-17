@@ -1,4 +1,16 @@
 let repeatedWords = [];
+
+const newBtn = document.getElementById("btn-new");
+const seenBtn = document.getElementById("btn-seen");
+
+newBtn.addEventListener("click", () => {
+  console.log("new");
+});
+
+//TODO:
+//1. on click of new, go to next word in the array
+//
+
 window.onload = () => {
   fetch("https://random-word-api.herokuapp.com/word?number=10")
     .then((response) => response.json())
@@ -10,7 +22,7 @@ window.onload = () => {
       }
       // console.log(repeatedWords);
       document.getElementsByClassName("word")[0].innerText = repeatedWords[0];
-      console.log(document.getElementsByClassName("word"));
+      console.log(repeatedWords);
     })
     .catch((error) => console.error(error));
 };
